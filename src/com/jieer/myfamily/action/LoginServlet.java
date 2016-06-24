@@ -50,8 +50,13 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		FamilyMemberDao fmd =new FamilyMemberDao();
-		boolean issuccess = fmd.validateLogin(new User(username,password));
-		System.out.println("issuccess"+issuccess);
+		boolean issucess = fmd.validateLogin(new User(username,password));
+		if(issucess){
+			request.getSession().setAttribute("isLogin", issucess);
+			request.getRequestDispatcher("/ShowAllResults").forward(request, response);
+		}
+		fmd.destroyConnection();
+		System.out.println("Already forward!!");
 	}
 
 	/**

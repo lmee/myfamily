@@ -1,4 +1,4 @@
-#Tue Jun 21 17:52:31 CST 2016
+#Wed Jun 22 16:46:53 CST 2016
 eclipse.preferences.version=1
-validator.Checked=WebRoot/index.jsp
+validator.Checked=WebRoot/addmember.jsp,WebRoot/index.jsp
 validator.Unchecked=

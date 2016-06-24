@@ -36,6 +36,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <%    
+  if(request.getSession().getAttribute("isLogin")!=null && (Boolean)request.getSession().getAttribute("isLogin")){
+  	request.getRequestDispatcher("/ShowAllResults").forward(request, response);
+  } 
+  %> 
+  
     <div align="center">
         	<h2>Login</h2><label id="tips"></label><br>
     	<form name="familylogin" action="LoginServlet" method="post">
